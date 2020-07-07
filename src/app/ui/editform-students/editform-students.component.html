@@ -1,0 +1,218 @@
+<div class="row">
+    <div class="col" class="dropdown">
+      <div  class="d-inline-block">
+        <button
+          class="btn btn-outline-dark btn-sm dropdown-toggle"
+          type="button"        
+          id="dropdownForm"
+          data-toggle="dropdown"
+          aria-haspopup="true" 
+          aria-expanded="false"
+        >
+          Редактировать
+        </button>
+        <div  aria-labelledby="dropdownForm" [style.width]="'250px'"> <!-- Если убарть class="dropdown-menu", то будет форма  -->
+        
+          <form class="px-4 py-3" [formGroup]="editForm">
+            <div class="form-group">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Фамилия"
+                formControlName="surname"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Имя"
+                formControlName="name"
+              />
+            </div>
+            <div class="form-group">
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Отчество"
+                  formControlName="patronymic"
+                />
+            </div>
+            <div class="form-group">
+              <input
+              [textMask]="{mask: phoneMask}"
+              class="form-control"
+              type="text"
+              placeholder="Телефон"
+              formControlName="phone"
+              />
+            </div>
+            <div class="form-group">
+              <input
+              class="form-control"
+              type="text"
+              placeholder="Почта"
+              formControlName="email"
+              />
+            </div>
+            <div *ngIf="(editForm.get('email').touched && editForm.get('email').invalid)">
+              <small class="text-danger">Введите корректный адрес электронной почты</small>
+            </div>
+            <div class="form-group">
+              <input
+              
+              class="form-control"
+              type="date"
+              placeholder="Дата рождения"
+              formControlName="birthdate"
+              />
+            </div>
+            <div class="form-group">
+              <select class="custom-select" formControlName = "selectGroup">
+                <option *ngFor="let group of groups" [ngValue]="group">{{ group.group }}</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <select class="custom-select" formControlName = "selectDirection">
+                <option *ngFor="let direction of directions" [ngValue]="direction">{{ direction.direction }}</option>
+              </select>
+            </div>
+            <button 
+              type="submit" 
+              class="btn btn-primary btn-sm mt-3"
+              [style.width]="'200px'"
+              (click)="onEditStudent()"
+              [disabled]="editForm.invalid"
+            >
+              Применить
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<!-- <div class="container-fluid">
+  <form [formGroup]="editForm">
+    <div class="form-group">
+      <label for="usersurname">Фамилия</label>
+      <input
+        type="text"
+        class="form-control"
+        id="usersurname"
+        placeholder="Фамилия"
+        formControlName="surname"
+      />
+    </div>
+    <div class="form-group">
+      <label for="username">Имя</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        placeholder="Имя"
+        formControlName="name"
+      />
+    </div>
+   
+    <div class="form-group">
+      <label for="userpatronymic">Отчество</label>
+      <input
+        type="text"
+        class="form-control"
+        id="userpatronymic"
+        placeholder="Отчетсво"
+        formControlName="patronymic"
+      />
+    </div>
+    <div class="form-group">
+      <label for="useryears">Дата Рождения</label>
+      <input
+        type="date"
+        class="form-control"
+        id="useryears"
+        formControlName="birthdate"
+      />
+    </div>
+    <div class="form-group">
+      <label for="usernumber">Телефон</label>
+      <input [textMask]="{mask: phoneMask}" class="form-control" placeholder="Телефон" formControlName="number" />
+    </div>
+    <div class="form-group">
+      <label for="useremail">E-mail</label>
+      <input type="email"
+        class="form-control"
+        id="useremail"
+        #Mail
+        placeholder="example@mail.ru"
+        formControlName="email"
+      />
+      <div *ngIf="(editForm.get('email').touched && editForm.get('email').invalid)">
+        <small class="text-danger">Введите корректный адрес электронной почты</small>
+      </div>
+    </div>
+    
+    
+    <div class="form-group" >
+      <label for="type">Отдел</label>
+      <select class="custom-select" id="type"  formControlName="type">
+        <option value = "IT" >IT</option>
+        <option value= "Продажи" >Отдел Продаж</option>
+        <option value = "Доставка">Отдел Доставки</option>
+        <option value = "Юридический">Юридический</option>
+      </select>
+    
+    </div>
+    <div class="form-gropup">
+   
+      <button class="btn btn-primary mr-4" [disabled]="editForm.invalid" (click)="onEditStudent()">
+        Сохранить
+      </button>
+
+      <button class="btn btn-danger" *ngIf="student.id != null" (click)="onDelete()" [routerLink]="'/users'">
+        Удалить
+      </button>
+      <button class="btn btn-success"  [routerLink]="'/users'" style="margin-left:20px;">
+        Вернуться
+      </button>
+   
+  </div>
+   
+  </form>
+</div>
+
+
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

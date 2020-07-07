@@ -1,0 +1,38 @@
+<div class="container">
+  
+  
+    <form [formGroup]="filterForm">
+        <div class="row mb-3">
+          <div class="col-12">
+            <h5>Найти студента</h5>
+          </div>
+          <div class="offset-3 col-6">
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Группа Направление (через пробел)"
+              formControlName="filterName"
+            />
+          </div>
+        </div>
+        <div class="row mb-3 justify-content-center">
+          <div class="">
+            <button class="btn btn-outline-primary" [disabled]="filterForm.invalid" (click)="onFilterStudent()">Фильтровать</button>
+          </div>
+        </div>
+        <hr>
+        <app-table-students
+          [title]="'Найдено программистов'"
+          [students]="getStudents() | filter: filteringName"
+          (editStudent)="onEdit($event)"
+          (deleteStudent)="onDeleteById($event)"
+        ></app-table-students>
+        
+        <hr>
+      </form>
+      
+  
+  </div>
+  
+  
+  

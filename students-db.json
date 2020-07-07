@@ -1,0 +1,70 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "surname": "Иванов",
+      "name": "Иван",
+      "patronymic": "Иванович",
+      "phone": "+78901234567",
+      "email": "hello@gmail.jd",
+      "birthdate": "12.11.2000",
+      "group": "181-325",
+      "direction": "ВЕБ"
+    },
+    {
+      "id": 2,
+      "surname": "Петров",
+      "name": "Петр",
+      "patronymic": "Иванович",
+      "phone": "+78901234567",
+      "email": "hello@gmail.jd",
+      "birthdate": "12.11.2000",
+      "group": "181-325",
+      "direction": "ВЕБ"
+    },
+    {
+      "id": 3,
+      "surname": "Сидоров",
+      "name": "Сидор",
+      "patronymic": "Иванович",
+      "phone": "+78901234567",
+      "email": "hello@gmail.jd",
+      "birthdate": "11.12.2000",
+      "group": "181-324",
+      "direction": "САПР"
+    },
+    {
+      "id": 4,
+      "surname": "Васильев",
+      "name": "Василий",
+      "patronymic": "Иванович",
+      "phone": "+78901234567",
+      "email": "hello@gmail.jd",
+      "birthdate": "12.12.2001",
+      "group": "181-325",
+      "direction": "ВЕБ"
+    },
+    {
+      "surname": "dfsghjj",
+      "name": "esfrgthyj",
+      "patronymic": "sfgdrhtfjg",
+      "phone": "+7456789087",
+      "email": "hiaim@hiam.ew",
+      "birthdate": "12.23.2121",
+      "group": "181-325",
+      "direction": "САПР",
+      "id": 12
+    },
+    {
+      "surname": "Усвяцов",
+      "name": "Артем",
+      "patronymic": "Денисович",
+      "phone": "+7877665537",
+      "email": "artoumy@yandex.ru",
+      "birthdate": "2001-01-01",
+      "group": "181-325",
+      "direction": "САПР",
+      "id": 13
+    }
+  ]
+}

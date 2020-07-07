@@ -1,0 +1,47 @@
+<router-outlet></router-outlet>
+<ng-container *ngIf="students.length > 0">
+    <div class="row">
+      <div class="col-12">
+        <h5>{{ title }}</h5>
+        <table class="table">
+          <thead>
+            <tr>
+              <th mat-sort-header="id" scope="col" [style.width]="'100px'">#</th>
+              <th mat-sort-header="name" scope="col" [style.width]="'150px'">Фамилия</th>
+              <th scope="col" [style.width]="'200px'">Инициалы</th>
+              <th scope="col" [style.width]="'100px'">Номер группы</th>
+              <th scope="col" [style.width]="'200px'">Направление подготовки</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of students">
+              <th scope="row">{{ student.id }}</th>
+              <td>{{ student.surname }}</td>
+              <td>{{ student.name }}</td>
+              <td>{{ student.group }}</td>
+              <td>{{ student.direction }}</td>
+              <td>
+                <!-- <button class="btn btn-outline-primary btn-sm" (click)="onEditStudent(student.id)">
+                  Информация
+                </button> -->
+                <app-editform-students 
+                  [student] = "student"
+                  (editStudent)="onEditStudent($event)"
+                ></app-editform-students>
+              </td>
+              <td>
+                <button
+                  class="btn btn-outline-danger btn-sm"
+                  (click)="onDeleteStudent(student.id)"
+                >
+                  Удалить
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </ng-container>
+  
